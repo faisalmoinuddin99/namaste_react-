@@ -2,7 +2,11 @@
  *
  *
  * <div id="parent">
- *      < id="child">
+ *      < div id="child-1">
+ *          <h1> I'm an h1 tag </h1>
+ *          <h2> I'm an h2 tag </h2>
+ *      </div>
+ *      < div id="child-2">
  *          <h1> I'm an h1 tag </h1>
  *          <h2> I'm an h2 tag </h2>
  *      </div>
@@ -13,7 +17,13 @@
 const parent = React.createElement(
   "div",
   { id: "parent" },
-  React.createElement("div", { id: "child" }, [
+  [
+    React.createElement("div", { id: "child-1" }, [
+      React.createElement("h1", {}, "I'm an h1 tag"),
+      React.createElement("h2", {}, "I'm an h2 tag"),
+    ]),
+  ],
+  React.createElement("div", { id: "child-2" }, [
     React.createElement("h1", {}, "I'm an h1 tag"),
     React.createElement("h2", {}, "I'm an h2 tag"),
   ])
