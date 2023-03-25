@@ -7,6 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello world!</h1>
+    <div id="root"></div>
+
+    <script>
+       const heading = document.createElement("h1")
+       heading.innerHTML = "Hello World from JavaScript"
+
+       const root = document.getElementById("root")
+       root.appendChild(heading)
+       
+     const paragraph = document.createElement("p")
+     paragraph.innerHTML = "I am paragraph tag"
+     root.appendChild(paragraph)
+    </script>
 </body>
 </html>
