@@ -1,25 +1,12 @@
-/*
- *
- *
- * <div id="parent">
- *      < div id="child-1">
- *          <h1> I'm an h1 tag </h1>
- *          <h2> I'm an h2 tag </h2>
- *      </div>
- *      < div id="child-2">
- *          <h1> I'm an h1 tag </h1>
- *          <h2> I'm an h2 tag </h2>
- *      </div>
- * </div>
- *
- */
+import React from "react";
+import ReactDOM from "react-dom/client";
 
 const parent = React.createElement(
   "div",
   { id: "parent" },
   [
     React.createElement("div", { id: "child-1" }, [
-      React.createElement("h1", {}, "I'm an h1 tag"),
+      React.createElement("h1", {}, "This is Namaste React 🚀"),
       React.createElement("h2", {}, "I'm an h2 tag"),
     ]),
   ],
@@ -29,7 +16,7 @@ const parent = React.createElement(
   ])
 );
 
-console.log(parent);
+console.log(parent); // object
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
