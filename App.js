@@ -14,12 +14,18 @@ const HeadingComponent1 = () => {
 };
 
 const Title = () => <h2>I am React Functional Component Title</h2>;
-
+const title = <h2>I am React Functional Component Title</h2>;
+const number = 100;
 const HeadingComponent2 = () => (
   <div id="container">
     <h1 className="heading">Bonjour React Functional Component 2</h1>
-    {/* Component Composition */}
+    {title}
+    {
+      // we can write any JavaScript code inside this curly braces
+      Title()
+    }
     <Title />
+    <Title></Title>
   </div>
 );
 
