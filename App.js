@@ -1,43 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// React Element
-const heading = <h1 className="heading">Namaste React using JSX</h1>;
+/*
 
-console.log("JSX: ");
-console.log(heading);
-
-// React Functional Component
-const HeadingComponent1 = () => {
-  // return some piece of JSX
-  return <h1 className="heading">Namaste React Functional Component 1</h1>;
-};
-
-const Title = () => <h2>I am React Functional Component Title</h2>;
-const title = <h2>I am React Functional Component Title</h2>;
-const number = 100;
-const HeadingComponent2 = () => (
-  <div id="container">
-    <h1 className="heading">Bonjour React Functional Component 2</h1>
-    {title}
-    {
-      // we can write any JavaScript code inside this curly braces
-      Title()
-    }
-    <Title />
-    <Title></Title>
-  </div>
-);
-
-const NavigationComponet = () => {
-  return (
-    <div id="navigation">
-      <Title />
-      <HeadingComponent1 />
-    </div>
-  );
-};
+* Header
+  - Logo
+  - Nav Items
+* Body
+  - Search
+  - RestaurantContainer
+    - RestaurantCard
+* Footer
+  - Copyright
+  - Links
+  - Address
+  - Contact Information
+*/
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<HeadingComponent2 />);
+root.render();
