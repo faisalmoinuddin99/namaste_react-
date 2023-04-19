@@ -1777,9 +1777,12 @@ const Body = () => {
       <div className="search">Search</div>
       <div className="restaurant-container">
         {/* RestaurantCard */}
-        {resList.map((restaurant) => (
-          <RestaurantCard resData={restaurant} />
-        ))}
+        {
+          // config driven Ui
+          resList.map((restaurant) => (
+            <RestaurantCard resData={restaurant} />
+          ))
+        }
       </div>
     </div>
   );
