@@ -7,6 +7,7 @@ import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import Contact from "./src/Contact";
 import Error from "./src/Error";
 import RestaurantMenu from "./src/RestaurantMenu";
+import TestCompoent from "./src/TestComponent";
 
 /*
 
@@ -58,6 +59,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurants/:resId", // dynamic URL
         element: <RestaurantMenu />,
+      },
+      {
+        path: "/test",
+        element: <TestCompoent />,
       },
     ],
     errorElement: <Error />,
