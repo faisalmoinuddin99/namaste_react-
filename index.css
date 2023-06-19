@@ -1,47 +1,213 @@
-.header{
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f5f5f5;
+  }
+  
+/* Header Styles */
+.header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    border: 1px solid black;
-}
-
-.logo{
-    width: 200px;
-}
-
-.nav-items{
-    padding: 0px 20px ;
-}
-.nav-items > ul {
+    height: 60px;
+    padding: 0 20px;
+    background-color: #eeaaaa; /* set the background color to dark */
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    width: 60px; /* increase the width to make the logo bigger */
+    height: 60px; /* increase the height to make the logo bigger */
+  }
+  
+  .nav-items ul {
     display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-items li {
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #fff; /* set the font color to white */
+  }
+  
+  .nav-items li:hover {
+    color: #1a73e8;
+  }
+  
+  
+  /* Body Styles */
+  .body {
+    margin: 20px;
+  }
+  
+  .search {
+    width: 50%;
+    height: 40px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    margin: 20px auto 40px;
+  }
+  
+  .search input[type="text"] {
+    border: none;
+    outline: none;
+    width: 90%;
+    height: 100%;
+    padding: 0 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    background-color: transparent;
+  }
+  
+  .search button {
+    width: 10%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  .search button svg {
+    width: 20px;
+    height: 20px;
+    fill: #333;
+  }
+  
+  
+  .restaurant-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .res-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+   
+  }
+  
+  .res-card h3 {
     font-size: 24px;
-    list-style-type: none;
-}
-
-.nav-items > ul > li {
-    padding: 10px;
-    margin: 10px;
-}
-
-.res-card{
-    
-    width: 200px;
-    
-    margin: 5px;
-    padding: 5px;
-}
-.res-card:hover{
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .res-card h4 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 5px 0;
+    text-align: center;
+    color: #666;
+  }
+  .res-card:hover{
     border: 1px solid black;
     cursor: pointer;
 }
-.search{
-    padding: 10px;
-}
-.res-logo {
-    width: 100%;
   
+  .res-logo {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  /* Footer Styles */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+    background-color: #fff;
+    box-shadow: 0px -1px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .footer p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+  }
+  
+  .footer a {
+    color: #1a73e8;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  
+  .filter-btn{
+    margin-bottom: 25px;
+  }
+
+  /* Shimmer CSS start */
+  article{
+    background: #ddd;
+    width: 100%;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+ 
+article .line{
+    width: 100%;
+    height: 20px;
+    background: #bbb;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+ 
+article .shimmer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+ 
+    background: linear-gradient(100deg,
+    rgba(255,255,255,0) 20%,
+    rgba(255,255,255,0.5) 50%,
+    rgba(255,255,255,0) 80%);
+ 
+    animation: shimmer 2s infinite linear;
+}
+ 
+@keyframes shimmer{
+    from {
+        transform: translateX(-200%);
+    }
+    to{
+        transform: translateX(200%);
+    }
 }
 
-.restaurant-container{
-    display: flex ;
-    flex-wrap: wrap;
-}
+/* Simmer Css End */
