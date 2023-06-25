@@ -19,10 +19,29 @@ class About extends Component {
         <h1>About Us</h1>
         <h2>This is namaste React web Series🙏</h2>
 
-        <UserClass name={"Akshay Saini Class"} location={"Dheradun Class"} />
+        <UserClass name={"First"} location={"Dheradun Class"} />
+        <UserClass name={"Second"} location={"Dheradun Class"} />
+        <UserClass name={"Third"} location={"Dheradun Class"} />
       </div>
     );
   }
 }
+
+/*
+  - parent Constructor
+  - Parent Render
+
+    - First Constructor
+    - First Render 
+
+    - Second Constructor
+    - Second Render
+
+    <DOM UPDATED - IN SINGLE BATCH>
+
+    - First ComponentDidMount
+    - Second ComponentDidMount
+    - Parent ComponentDidMount
+*/
 
 export default About;
