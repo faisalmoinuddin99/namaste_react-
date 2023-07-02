@@ -3,30 +3,18 @@ import RestaurantCard from "./RestaurantCard";
 
 import { Shimmer } from "./Shimmer";
 import { Link } from "react-router-dom";
+import useFetchRestaurant from "../utils/useFetchRestaurant";
 
 const Body = () => {
-  const [listOfRestaurant, setListOfRestaurant] = useState([]);
-  const [searchRestaurant, setSearchRestaurant] = useState("");
-  const [filterRestaurant, setFilterRestaurant] = useState([]);
-
-  console.log("Body called");
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0749777&lng=72.88477790000002&page_type=DESKTOP_WEB_LISTING"
-    );
-
-    const dataToJson = await data.json();
-
-    console.log(dataToJson.data.cards[2].data.data.cards);
-    // Optional Chaining
-    setListOfRestaurant(dataToJson?.data?.cards[2]?.data?.data?.cards);
-    setFilterRestaurant(dataToJson?.data?.cards[2]?.data?.data?.cards);
-  };
+  // custom hook
+  const {
+    listOfRestaurant,
+    setListOfRestaurant,
+    searchRestaurant,
+    setSearchRestaurant,
+    filterRestaurant,
+    setFilterRestaurant,
+  } = useFetchRestaurant();
 
   // Conditional Rendering
   // if (listOfRestaurant.length === 0) {
@@ -91,11 +79,6 @@ const Body = () => {
           ))
         }
       </div>
-      {/* <div className="side-practice">
-        {listOfFootballers.map((player) => (
-          <SidePractice key={player.id} data={player} />
-        ))}
-      </div> */}
     </div>
   );
 };
