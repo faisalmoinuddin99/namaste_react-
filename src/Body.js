@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 
 import { Shimmer } from "./Shimmer";
 import { Link } from "react-router-dom";
 import useFetchRestaurant from "../utils/useFetchRestaurant";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   // custom hook
@@ -20,6 +20,16 @@ const Body = () => {
   // if (listOfRestaurant.length === 0) {
   //   return <Shimmer />;
   // }
+
+  const onlineStatus = useOnlineStatus();
+
+  if (!onlineStatus) {
+    return (
+      <h1>
+        Looks like you're offline!!! Please check your internet connection
+      </h1>
+    );
+  }
 
   // Conditional Rendering using Ternary Operator
   return listOfRestaurant.length === 0 ? (
