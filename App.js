@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./src/Header";
 import Body from "./src/Body";
@@ -7,7 +7,6 @@ import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import Contact from "./src/Contact";
 import Error from "./src/Error";
 import RestaurantMenu from "./src/RestaurantMenu";
-import TestCompoent from "./src/TestComponent";
 
 /*
 
@@ -26,6 +25,9 @@ import TestCompoent from "./src/TestComponent";
   - Address
   - Contact Information
 */
+
+// chunking / code spilting / Dynamic Bundling / Lazy Loading / on demand loading / dynamic loading
+const Grocery = lazy(() => import("./src/Grocery"));
 
 const AppLayout = () => {
   // virtual DOM
@@ -61,8 +63,12 @@ const appRouter = createBrowserRouter([
         element: <RestaurantMenu />,
       },
       {
-        path: "/test",
-        element: <TestCompoent />,
+        path: "/grocery",
+        element: (
+          <Suspense fallback={<h2>Loading...</h2>}>
+            <Grocery />
+          </Suspense>
+        ),
       },
     ],
     errorElement: <Error />,
